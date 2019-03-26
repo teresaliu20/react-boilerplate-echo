@@ -12,7 +12,8 @@ export default function NotFound() {
     <div className="page-wrapper-sidebar">
       <SideNavigation />
       <div className="page-body">
-        <h1>Welcome</h1>
+        <h1>Page Not Found!</h1>
+        <p>Did you forget to add your container to the router under containers/App.js?</p>
       </div>
     </div>
   );

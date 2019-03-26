@@ -1,117 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import SideNavigation from 'components/SideNavigation';
-import Button from 'components/Button';
-import Channel from '../../models/channel';
-import { fetchChannels } from '../../lib/api';
 
 class HomePage extends React.Component {
   state = {
-    toggleCommunityForm: '',
-    communityName: '',
-    communityDescription: '',
+    name: '',
+    age: '',
   };
 
-  async componentWillMount() {
-    const channels = await fetchChannels();
-    this.setState({ channels });
-  }
-
-  handleSubmitCommunity = async () => {
-    const channel = new Channel({
-      name: this.state.communityName,
-      description: this.state.communityDescription,
-    });
-    await channel.create();
-    // close form
-    this.toggleCommunityForm();
-    // redirect
+  handleSubmit = async () => {
+    alert(
+      `According to this components state, you have
+      ${this.state.name} as your name and ${this.state.age}
+      as your age. Edit this function to add functionality on submitting this form.`,
+    );
   };
 
-  toggleCommunityForm = () => {
-    this.setState(prevState => ({
-      toggleCommunityForm: !prevState.toggleCommunityForm,
-    }));
+  handleClickButton = () => {
+    alert(
+      'You clicked this button! Fill in this function to add functionality to the button',
+    );
   };
 
   render() {
-    let channels = null;
-    if (this.state.channels) {
-      channels = (
-        <div className="cards-wrapper">
-          {this.state.channels.map(channel => (
-            <div className="card">
-              <div>
-                <Link
-                  to={{
-                    pathname: '/support',
-                    state: {
-                      id: channel.attrs.id,
-                      name: channel.attrs.name,
-                      description: channel.attrs.description,
-                    },
-                  }}
-                >
-                  <h3>{channel.attrs.name}</h3>
-                  <p>{channel.attrs.description}</p>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    }
     return (
       <div className="page-wrapper-sidebar home-page">
         <SideNavigation />
         <div className="page-body">
           <h1>Welcome</h1>
           <p className="body-text">
-            You are not alone. We are here for you. Welcome to a space where you
-            can stay completely <span className="highlight">anonymous</span> and
-            feel at ease discussing your experiences freely amongst a supportive
-            community.
+            This is a simple boilerplate for React code. It is built off of 
+            an existing boilerplate called <a className="highlight" href="https://github.com/facebook/create-react-app">react-boilerplate</a> If you have any questions about it,
+            feel free to contact me at teresaliu20@gmail.com.
           </p>
-          <h3>Communities</h3>
-          {channels}
-          <h3>Reports</h3>
-          <div className="card card-long">
-            <div>
-              <h3>Report Status</h3>
-              <p>Submitted Jan 14, 2019</p>
-              <p>Waiting for police review and support</p>
-              <div className="status">
-                <h4>Filed</h4>
-              </div>
-            </div>
-          </div>
-
-          <Button title="Create Community" onClick={this.toggleCommunityForm} />
-          {this.state.toggleCommunityForm && (
-            <div className="form">
-              <h3>Create Community</h3>
-              <input
-                placeholder="Enter name"
-                type="text"
-                value={this.state.communityName}
-                onChange={e => this.setState({ communityName: e.target.value })}
-              />
-              <p className="input-label">Details</p>
-              <input
-                placeholder="Enter community description"
-                type="text"
-                value={this.state.communityDescription}
-                onChange={e =>
-                  this.setState({ communityDescription: e.target.value })
-                }
-              />
-              <Button
-                title="Submit Community"
-                onClick={this.handleSubmitCommunity}
-              />
-            </div>
-          )}
+          <p className="body-text">
+            To get started, go ahead and look at "app/containers/App/index.js" to see 
+            the routing scheme of the app and go ahead and create your own containers and components.
+          </p>
         </div>
       </div>
     );

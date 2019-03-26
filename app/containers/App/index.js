@@ -10,15 +10,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import LoginPage from 'containers/LoginPage/Loadable';
-import LegalPage from 'containers/LegalPage/Loadable';
-import MentalPage from 'containers/MentalPage/Loadable';
-import PolicePage from 'containers/PolicePage/Loadable';
-import ContactPage from 'containers/ContactPage/Loadable';
-import SupportRoomPage from 'containers/SupportRoomPage/Loadable';
-import SubmitReportPage from 'containers/SubmitReportPage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import HomePage from 'containers/HomePage';
+import CardViewTemplate from 'containers/CardViewTemplate';
+import ContactPage from 'containers/ContactPage';
+import NotFoundPage from 'containers/NotFoundPage';
 import TopNavigation from 'components/TopNavigation';
 import Footer from 'components/Footer';
 
@@ -38,12 +33,7 @@ export default function App() {
       <TopNavigation />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/support" component={SupportRoomPage} />
-        <Route exact path="/submit-report" component={SubmitReportPage} />
-        <Route exact path="/legal" component={LegalPage} />
-        <Route exact path="/police" component={PolicePage} />
-        <Route exact path="/mental" component={MentalPage} />
-        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/cards" component={CardViewTemplate} />
         <Route exact path="/contact" component={ContactPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>

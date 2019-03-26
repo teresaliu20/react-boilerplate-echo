@@ -3,8 +3,8 @@ import React from 'react';
 function Footer() {
   return (
     <div className="footer">
-      <p>Survivor Space</p>
-      <p>&copy; Survivor Space 2019</p>
+      <p>React Boilerplate Echo</p>
+      <p>&copy; Teresa Liu</p>
     </div>
   );
 }

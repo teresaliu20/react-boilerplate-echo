@@ -6,29 +6,14 @@ import Button from 'components/Button';
 class ContactPage extends React.Component {
   state = {
     message: '',
-    message2: '',
   };
 
   handleSubmitReportClick = () => {};
 
   sendTextMessage = () => {
-    fetch(`/send-message/${this.state.message}`)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
-  sendTextMessageSecond = () => {
-    fetch(`/send-message/${this.state.message2}`)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    alert(
+      'Send message button clicked! Implement this function in the code here.',
+    );
   };
 
   render() {
@@ -38,18 +23,16 @@ class ContactPage extends React.Component {
         <div className="page-body">
           <h1>Contacts</h1>
           <p className="body-text">
-            Reach out to help anonymously. Your phone number wont be shared
-            without your consent.
+            This is a template for creating short forms in card view. This
+            example shows how you could create contact cards and send messages
+            to other users.
           </p>
           <div className="contacts-list">
             <div className="card card-long">
               <div>
-                <h3>Healthcare Professional</h3>
-                <p>+1 192 142 1253</p>
-                <p>
-                  Create text message to get help on your mental and physical
-                  health.
-                </p>
+                <h3>Mom</h3>
+                <p>+123 456 7890</p>
+                <p>Send a text to your mom.</p>
               </div>
               <input
                 placeholder="Enter Message"
@@ -58,26 +41,6 @@ class ContactPage extends React.Component {
                 onChange={e => this.setState({ message: e.target.value })}
               />
               <Button title="Let's Talk" onClick={this.sendTextMessage} />
-            </div>
-            <div className="card card-long">
-              <div>
-                <h3>Legal Aid</h3>
-                <p>+1 213 124 1159</p>
-                <p>
-                  Create text message to consult with a legal aid for potential
-                  lawsuits.
-                </p>
-                <input
-                  placeholder="Enter Message"
-                  type="text"
-                  value={this.state.message2}
-                  onChange={e => this.setState({ message2: e.target.value })}
-                />
-                <Button
-                  title="Let's Talk"
-                  onClick={this.sendTextMessageSecond}
-                />
-              </div>
             </div>
           </div>
         </div>

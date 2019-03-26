@@ -3,7 +3,7 @@ import React from 'react';
 import SideNavigation from 'components/SideNavigation';
 import data from './data.json';
 
-export default function MentalPage() {
+export default function CardViewTemplate() {
   return (
     <div className="page-wrapper-sidebar">
       <SideNavigation />
