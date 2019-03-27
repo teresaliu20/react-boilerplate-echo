@@ -14,10 +14,9 @@ import HomePage from 'containers/HomePage';
 import CardViewTemplate from 'containers/CardViewTemplate';
 import ContactPage from 'containers/ContactPage';
 import NotFoundPage from 'containers/NotFoundPage';
+import BlankPage from 'containers/BlankPage';
 import TopNavigation from 'components/TopNavigation';
 import Footer from 'components/Footer';
-
-import GlobalStyle from '../../global-styles';
 
 require('../../stylesheets/main.scss');
 
@@ -35,10 +34,10 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/cards" component={CardViewTemplate} />
         <Route exact path="/contact" component={ContactPage} />
+        <Route exact path="/blank" component={BlankPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
-      <GlobalStyle />
     </div>
   );
 }

@@ -22,6 +22,11 @@ class SideNavigation extends React.Component {
             <h4>Card View Template</h4>
           </a>
         </div>
+        <div className="nav-category-wrapper">
+          <a href="/blank" className="link">
+            <h4>Blank Starter Page</h4>
+          </a>
+        </div>
       </div>
     );
   }
