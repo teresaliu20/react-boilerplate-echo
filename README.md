@@ -1,4 +1,5 @@
-### React Boilerplate Echo
+# React Boilerplate Echo
+<br/>
 
 This boilerplate was created to make developing in react simple and as fast as possible, without 
 having all the overhead of larger boilerplates. It was built off of a larger boilerplate called [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate). This is my simplification of that boilerplate.
