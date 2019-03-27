@@ -3,6 +3,13 @@
 This boilerplate was created to make developing in react simple and as fast as possible, without 
 having all the overhead of larger boilerplates. It was built off of a larger boilerplate called [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate). This is my simplification of that boilerplate.
 
+### Starting
+1. Clone or download this Github repo
+2. Run `npm install` or `yarn install`
+3. Run `npm start` or `yarn start`
+4. Open `http://localhost:3000/`
+5. Get developing!
+
 ### Features
 - Hot reloading, so that your code will automatically be rendered in the browser whenever you save your files
 - SCSS Support
